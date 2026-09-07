@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bayu Riesta | Web Developer & IT Systems Specialist - CV</title>
+  <meta name="description" content="Curriculum Vitae of Bayu Riesta: Web Developer, IT Support Specialist, and Computer Systems Graduate from Universitas Tanjungpura.">
+  <meta name="author" content="Bayu Riesta">
+  <meta name="theme-color" content="#2563eb" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#090d16" media="(prefers-color-scheme: dark)">
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Bayu Riesta | Web Developer & IT Systems Specialist - CV">
+  <meta property="og:description" content="Blazing-fast responsive CV and portfolio of Bayu Riesta.">
+  
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/style.css?v=1.3">
+  <link rel="stylesheet" href="css/print.css?v=1.3" media="print">
+
+  <!-- Instant Theme & Language Initializer (Prevents Flash of Wrong Theme or Language) -->
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem('cv-theme-pref');
+        var theme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+
+        var savedLang = localStorage.getItem('cv-lang-pref');
+        var lang = savedLang || 'en';
+        document.documentElement.setAttribute('data-lang', lang);
+        document.documentElement.setAttribute('lang', lang);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Schema.org Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Bayu Riesta",
+    "jobTitle": "Web Developer & IT Support Specialist",
+    "email": "mailto:byriesta@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pontianak",
+      "addressRegion": "Kalimantan Barat",
+      "addressCountry": "Indonesia"
+    },
+    "sameAs": [
+      "https://github.com/byriesta"
+    ],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Universitas Tanjungpura"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <div class="page-wrapper">
+
+    <!-- Top Action Bar (Print, Copy, Language, Theme Toggle) -->
+    <aside class="cv-toolbar no-print" aria-label="CV controls">
+      <button id="copyEmailBtn" class="action-btn" data-email="byriesta@gmail.com" title="Copy email address" aria-label="Copy email address">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+        <span>Email</span>
+      </button>
+
+      <button id="printCvBtn" class="action-btn primary" title="Print or save as PDF (Ctrl+P)" aria-label="Print or save as PDF">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 6 2 18 2 18 9"></polyline>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+          <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+        <span>PDF</span>
+      </button>
+
+      <!-- Language Toggle Button (EN / ID) -->
+      <button id="langToggleBtn" class="action-btn" title="Switch Language / Ganti Bahasa" aria-label="Switch Language (EN / ID)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        <span class="lang-code lang-badge">EN</span>
+      </button>
+
+      <!-- Theme Toggle Button -->
+      <button id="themeToggleBtn" class="action-btn" title="Toggle dark/light mode" aria-label="Toggle dark/light mode">
+        <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <span class="theme-label" data-lang="en">Theme</span>
+        <span class="theme-label" data-lang="id">Tema</span>
+      </button>
+    </aside>
+
+    <!-- Main CV Sheet -->
+    <main class="cv-sheet">
+
+      <!-- Header & Hero Profile -->
+      <header class="header-hero">
+        <div class="hero-content">
+          <h1 class="hero-name">Bayu Riesta</h1>
+          <p class="hero-title" data-lang="en">Web Developer & IT Systems Specialist</p>
+          <p class="hero-title" data-lang="id">Web Developer & Spesialis Sistem IT</p>
+          <div class="hero-location">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+            </svg>
+            <span data-lang="en">Pontianak, West Kalimantan, Indonesia</span>
+            <span data-lang="id">Pontianak, Kalimantan Barat, Indonesia</span>
+          </div>
+
+          <!-- Contact Channels & Socials -->
+          <div class="contact-links">
+            <a href="mailto:byriesta@gmail.com" class="contact-pill" title="Email Bayu">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+              <span>byriesta@gmail.com</span>
+            </a>
+
+            <a href="https://wa.link/28fysj" target="_blank" rel="noopener noreferrer" class="contact-pill no-print" title="WhatsApp: Bayu Riesta">
+              <svg viewBox="0 0 24 24">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.16 12.04 20.16C10.57 20.16 9.14 19.77 7.9 19.03L7.6 18.85L4.49 19.67L5.32 16.63L5.12 16.32C4.31 15.02 3.8 13.49 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67ZM8.73 7.34C8.54 7.34 8.23 7.41 7.98 7.68C7.72 7.95 7.02 8.61 7.02 9.96C7.02 11.31 8 12.61 8.14 12.8C8.28 12.98 10.1 15.79 12.88 17C13.54 17.29 14.05 17.46 14.46 17.59C15.13 17.8 15.74 17.77 16.22 17.7C16.76 17.62 17.88 17.02 18.11 16.36C18.34 15.71 18.34 15.15 18.27 15.03C18.2 14.92 18.01 14.85 17.73 14.71C17.45 14.57 16.07 13.89 15.82 13.8C15.56 13.7 15.38 13.66 15.19 13.94C15 14.21 14.46 14.85 14.29 15.03C14.13 15.22 13.96 15.24 13.68 15.1C13.4 14.96 12.51 14.67 11.45 13.73C10.63 12.99 10.07 12.08 9.91 11.8C9.75 11.52 9.89 11.37 10.03 11.23C10.16 11.1 10.32 10.89 10.46 10.73C10.6 10.56 10.65 10.45 10.74 10.26C10.83 10.08 10.79 9.91 10.72 9.77C10.65 9.63 10.09 8.27 9.86 7.72C9.64 7.18 9.41 7.25 9.24 7.25C9.08 7.24 8.89 7.24 8.73 7.24V7.34Z"/>
+              </svg>
+              <span>WhatsApp</span>
+            </a>
+
+            <a href="https://github.com/byriesta" target="_blank" rel="noopener noreferrer" class="contact-pill" title="GitHub: @byriesta">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+              </svg>
+              <span>github.com/byriesta</span>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Section: About / Summary -->
+      <section class="cv-section" aria-labelledby="summary-heading">
+        <h2 id="summary-heading" class="section-heading">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span data-lang="en">Professional Summary</span>
+          <span data-lang="id">Ringkasan Profesional</span>
+        </h2>
+        <p class="summary-text" data-lang="en">
+          Adaptable and detail-oriented professional with a solid foundation in Computer Systems, combining strong programming capabilities with IT infrastructure expertise. Proven hands-on experience across full-stack web development, mobile application engineering, and IT hardware and software maintenance. Proficient in developing scalable applications, optimizing system performance, and implementing robust digital solutions.
+        </p>
+        <p class="summary-text" data-lang="id">
+          Profesional yang adaptif dan berorientasi pada detail dengan latar belakang kuat di bidang Sistem Komputer, memadukan kemampuan pemrograman yang solid dengan keahlian infrastruktur IT. Memiliki pengalaman terbukti dalam pengembangan web full-stack, rekayasa aplikasi mobile, serta pemeliharaan hardware dan software IT. Terampil dalam mengembangkan aplikasi yang skalabel, mengoptimalkan kinerja sistem, dan mengimplementasikan solusi digital yang efisien.
+        </p>
+      </section>
+
+      <!-- Section: Work Experience -->
+      <section class="cv-section" aria-labelledby="experience-heading">
+        <h2 id="experience-heading" class="section-heading">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          </svg>
+          <span data-lang="en">Work Experience</span>
+          <span data-lang="id">Pengalaman Kerja</span>
+        </h2>
+
+        <div class="experience-list">
+
+          <!-- Role 1: IT Support Specialist -->
+          <article class="experience-card">
+            <div class="card-header">
+              <div>
+                <h3 class="role-title" data-lang="en">IT Support Specialist</h3>
+                <h3 class="role-title" data-lang="id">Spesialis IT Support</h3>
+                <div class="company-meta" data-lang="en">
+                  <span>Freelance Technical Services</span>
+                </div>
+                <div class="company-meta" data-lang="id">
+                  <span>Layanan Teknis Freelance</span>
+                </div>
+              </div>
+              <time class="date-badge" data-lang="en">May 2020 — Present</time>
+              <time class="date-badge" data-lang="id">Mei 2020 — Sekarang</time>
+            </div>
+            <ul class="bullet-list" data-lang="en">
+              <li>Installed, configured, and troubleshot operating systems (Windows/Linux) and essential software across client laptops and desktop workstations.</li>
+              <li>Assembled custom desktop PCs and replaced hardware components, including RAM, graphics cards (GPU/VGA), motherboards, and storage drives.</li>
+              <li>Performed comprehensive preventative hardware maintenance, including dust extraction, thermal paste reapplication, BIOS battery replacement, and software bloatware removal.</li>
+            </ul>
+            <ul class="bullet-list" data-lang="id">
+              <li>Melakukan instalasi, konfigurasi, dan pemecahan masalah sistem operasi (Windows/Linux) serta aplikasi esensial pada laptop dan PC desktop klien.</li>
+              <li>Melakukan pemasangan/penggantian hardware pada laptop/PC seperti perakitan PC kustom, pemasangan RAM, kartu grafis (GPU/VGA), dan media penyimpanan.</li>
+              <li>Melakukan pemeliharaan dan pembersihan hardware secara berkala seperti pembersihan debu, penggantian thermal paste, penggantian baterai BIOS, dan pembersihan bloatware.</li>
+            </ul>
+            <div class="card-tags">
+              <span class="tech-tag">IT Support</span>
+              <span class="tech-tag" data-lang="en">Hardware Diagnostics</span>
+              <span class="tech-tag" data-lang="id">Diagnostik Hardware</span>
+              <span class="tech-tag" data-lang="en">PC Assembly</span>
+              <span class="tech-tag" data-lang="id">Perakitan PC</span>
+              <span class="tech-tag" data-lang="en">OS Deployment</span>
+              <span class="tech-tag" data-lang="id">Instalasi OS</span>
+              <span class="tech-tag" data-lang="en">Preventative Maintenance</span>
+              <span class="tech-tag" data-lang="id">Pemeliharaan Preventif</span>
+            </div>
+          </article>
+
+          <!-- Role 2: Web Developer -->
+          <article class="experience-card">
+            <div class="card-header">
+              <div>
+                <h3 class="role-title">Web Developer</h3>
+                <div class="company-meta">
+                  <span>PT Medika Digitalisasi Indonesia</span>
+                </div>
+              </div>
+              <time class="date-badge" data-lang="en">Jul 2022 — Dec 2022</time>
+              <time class="date-badge" data-lang="id">Jul 2022 — Des 2022</time>
+            </div>
+            <ul class="bullet-list" data-lang="en">
+              <li>Researched and conceptualized application menu structures, user interface layouts, and navigational wireframes.</li>
+              <li>Designed and normalized relational database schemas in MySQL for optimal application performance and data integrity.</li>
+              <li>Built responsive, dynamic web applications utilizing Laravel, Bootstrap, and jQuery.</li>
+            </ul>
+            <ul class="bullet-list" data-lang="id">
+              <li>Melakukan riset tampilan dan struktur menu pada aplikasi yang akan digunakan.</li>
+              <li>Merancang skema basis data relasional di MySQL untuk mendukung efisiensi aplikasi dan integritas data.</li>
+              <li>Membangun aplikasi web yang responsif dan dinamis menggunakan framework Laravel, Bootstrap, dan jQuery.</li>
+            </ul>
+            <div class="card-tags">
+              <span class="tech-tag">Laravel</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">Bootstrap</span>
+              <span class="tech-tag">jQuery</span>
+              <span class="tech-tag">UI/UX</span>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Section: Featured Projects & Research -->
+      <section class="cv-section" aria-labelledby="projects-heading">
+        <h2 id="projects-heading" class="section-heading">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+          <span data-lang="en">Featured Projects & Research</span>
+          <span data-lang="id">Projek Unggulan & Riset</span>
+        </h2>
+
+        <div class="projects-grid">
+
+          <!-- Project 1: Skripsi -->
+          <article class="project-card">
+            <div class="project-top">
+              <div class="project-title-row">
+                <h3 class="project-title" data-lang="en">IoT-Based Citrus Fruit Sorting System</h3>
+                <h3 class="project-title" data-lang="id">Sistem Sortir Buah Jeruk Berbasis IoT</h3>
+              </div>
+              <p class="project-desc" data-lang="en">
+                Undergraduate thesis research implementing an automated citrus fruit classification system utilizing IoT sensors, HTTP communication protocols, a centralized Laravel backend, and a connected mobile monitoring application.
+              </p>
+              <p class="project-desc" data-lang="id">
+                Projek skripsi sarjana yang mengimplementasikan sistem sortir buah jeruk otomatis berbasis IoT dengan komunikasi HTTP, terintegrasi dengan backend Laravel dan aplikasi mobile.
+              </p>
+            </div>
+            <div class="project-tags">
+              <span class="tech-tag">Internet of Things (IoT)</span>
+              <span class="tech-tag">Laravel</span>
+              <span class="tech-tag">HTTP API</span>
+              <span class="tech-tag">Mobile App</span>
+              <span class="tech-tag">MySQL</span>
+            </div>
+          </article>
+
+          <!-- Project 2: Web Solutions -->
+          <article class="project-card">
+            <div class="project-top">
+              <div class="project-title-row">
+                <h3 class="project-title" data-lang="en">Healthcare Management Web Platform</h3>
+                <h3 class="project-title" data-lang="id">Platform Web Manajemen Kesehatan</h3>
+              </div>
+              <p class="project-desc" data-lang="en">
+                Full-stack web application developed at PT Medika Digitalisasi Indonesia to streamline healthcare administrative processes, patient records, and responsive digital interfaces.
+              </p>
+              <p class="project-desc" data-lang="id">
+                Aplikasi web full-stack yang dikembangkan di PT Medika Digitalisasi Indonesia untuk menyederhanakan proses administrasi medis, rekam pasien, dan antarmuka responsif.
+              </p>
+            </div>
+            <div class="project-tags">
+              <span class="tech-tag">Laravel</span>
+              <span class="tech-tag">Bootstrap</span>
+              <span class="tech-tag">jQuery</span>
+              <span class="tech-tag" data-lang="en">Database Design</span>
+              <span class="tech-tag" data-lang="id">Desain Database</span>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Section: Technical Skills -->
+      <section class="cv-section" aria-labelledby="skills-heading">
+        <h2 id="skills-heading" class="section-heading">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+          <span data-lang="en">Skills & Core Competencies</span>
+          <span data-lang="id">Keahlian & Kompetensi</span>
+        </h2>
+
+        <div class="skills-container">
+          <div class="skill-category">
+            <span class="category-name" data-lang="en">Languages:</span>
+            <span class="category-name" data-lang="id">Bahasa Pemrograman:</span>
+            <div class="skill-pills">
+              <span class="skill-pill">PHP</span>
+              <span class="skill-pill">Java</span>
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">Dart</span>
+              <span class="skill-pill">C++</span>
+              <span class="skill-pill">Kotlin</span>
+              <span class="skill-pill">JavaScript</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <span class="category-name">Web & Backend:</span>
+            <div class="skill-pills">
+              <span class="skill-pill">Laravel</span>
+              <span class="skill-pill">PHP</span>
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">Node.js</span>
+              <span class="skill-pill">Bun</span>
+              <span class="skill-pill">Ktor</span>
+              <span class="skill-pill">MySQL</span>
+              <span class="skill-pill" data-lang="en">HTTP Protocols</span>
+              <span class="skill-pill" data-lang="id">Protokol HTTP</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <span class="category-name">Frontend & UI:</span>
+            <div class="skill-pills">
+              <span class="skill-pill">Bootstrap</span>
+              <span class="skill-pill">jQuery</span>
+              <span class="skill-pill" data-lang="en">UI/UX Flow</span>
+              <span class="skill-pill" data-lang="id">Alur UI/UX</span>
+              <span class="skill-pill">HTML5 / CSS3</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <span class="category-name">Mobile Development:</span>
+            <div class="skill-pills">
+              <span class="skill-pill">Flutter</span>
+              <span class="skill-pill">Dart</span>
+              <span class="skill-pill">Kotlin</span>
+              <span class="skill-pill">Java</span>
+              <span class="skill-pill">Android</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <span class="category-name" data-lang="en">IT & Infrastructure:</span>
+            <span class="category-name" data-lang="id">IT & Infrastruktur:</span>
+            <div class="skill-pills">
+              <span class="skill-pill">IT Support</span>
+              <span class="skill-pill" data-lang="en">PC Hardware Assembly</span>
+              <span class="skill-pill" data-lang="id">Perakitan PC</span>
+              <span class="skill-pill" data-lang="en">Hardware Diagnostics & Repair</span>
+              <span class="skill-pill" data-lang="id">Diagnostik & Perbaikan PC</span>
+              <span class="skill-pill" data-lang="en">Server Operation & Maintenance</span>
+              <span class="skill-pill" data-lang="id">Operasi & Pemeliharaan Server</span>
+              <span class="skill-pill" data-lang="en">OS Deployment</span>
+              <span class="skill-pill" data-lang="id">Instalasi OS</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <span class="category-name" data-lang="en">IoT & Embedded:</span>
+            <span class="category-name" data-lang="id">IoT & Sistem Tertanam:</span>
+            <div class="skill-pills">
+              <span class="skill-pill">Internet of Things (IoT)</span>
+              <span class="skill-pill">C++</span>
+              <span class="skill-pill" data-lang="en">Hardware Interfacing</span>
+              <span class="skill-pill" data-lang="id">Komunikasi Hardware</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Education & Credentials -->
+      <section class="cv-section" aria-labelledby="education-heading">
+        <h2 id="education-heading" class="section-heading">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+          </svg>
+          <span data-lang="en">Education & Organizational Activities</span>
+          <span data-lang="id">Pendidikan & Organisasi</span>
+        </h2>
+
+        <div class="education-list">
+          <article class="education-item">
+            <div class="education-item-header">
+              <h3 class="degree-title" data-lang="en">Bachelor of Computer Systems (S.Kom.)</h3>
+              <h3 class="degree-title" data-lang="id">Sarjana Sistem Komputer (S.Kom.)</h3>
+              <time class="date-badge" data-lang="en">Aug 2018 — Jul 2025</time>
+              <time class="date-badge" data-lang="id">Agu 2018 — Jul 2025</time>
+            </div>
+            <div class="school-name">Universitas Tanjungpura (UNTAN)</div>
+            <div class="edu-details" style="margin-top: 0.25rem;" data-lang="en">
+              <strong>Undergraduate Thesis:</strong> IoT-Based Citrus Fruit Sorting System featuring HTTP communication, integrated with a Laravel backend and mobile application.
+            </div>
+            <div class="edu-details" style="margin-top: 0.25rem;" data-lang="id">
+              <strong>Projek Skripsi:</strong> Sistem Sortir Buah Jeruk berbasis IoT dengan komunikasi HTTP, terintegrasi backend Laravel dan aplikasi mobile.
+            </div>
+            <div class="edu-details" style="margin-top: 0.25rem;" data-lang="en">
+              <strong>Campus Leadership & Committees:</strong>
+              Orientation Committee (PKKMB FMIPA UNTAN, 2019) • Public Relations Division (SREEN UNTAN, 2018–2019)
+            </div>
+            <div class="edu-details" style="margin-top: 0.25rem;" data-lang="id">
+              <strong>Kepanitiaan & Organisasi:</strong>
+              Kepanitiaan PKKMB FMIPA UNTAN (2019) • Divisi Humas SREEN UNTAN (2018–2019)
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Section: Training & Certifications -->
+      <section class="cv-section" aria-labelledby="training-heading">
+        <h2 id="training-heading" class="section-heading">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="7"></circle>
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+          </svg>
+          <span data-lang="en">Training & Certifications</span>
+          <span data-lang="id">Pelatihan</span>
+        </h2>
+
+        <div class="experience-list">
+          <article class="experience-card">
+            <div class="card-header">
+              <div>
+                <h3 class="role-title">Fresh Graduate Academy (FGA) DTS 2021 – CCNA Network Engineer</h3>
+                <div class="company-meta">
+                  <span>Kominfo & Cisco Networking Academy</span>
+                </div>
+              </div>
+              <time class="date-badge" data-lang="en">September 2021</time>
+              <time class="date-badge" data-lang="id">September 2021</time>
+            </div>
+            <ul class="bullet-list" data-lang="en">
+              <li>Completed the intensive CCNAv7 training program covering 3 core modules: Introduction to Networks; Switching, Routing, and Wireless Essentials; and Enterprise Networking, Security, and Automation.</li>
+              <li>Designed IPv4/IPv6 addressing schemes, configured routing protocols (Static & OSPFv2), and implemented VLANs, Inter-VLAN routing, STP, and EtherChannel.</li>
+              <li>Configured local and perimeter network security measures, including Switch Security, NAT, Access Control Lists (ACL), and Wireless LAN Controller (WLC).</li>
+              <li>Conducted network connectivity troubleshooting and learned the fundamentals of network automation and virtualization.</li>
+            </ul>
+            <ul class="bullet-list" data-lang="id">
+              <li>Menyelesaikan program pelatihan intensif CCNAv7 yang mencakup 3 modul utama: Introduction to Networks, Switching, Routing, and Wireless Essentials, serta Enterprise Networking, Security, and Automation.</li>
+              <li>Merancang skema pengalamatan IPv4/IPv6, konfigurasi routing (Static & OSPFv2), serta implementasi VLAN, Inter-VLAN routing, STP, dan EtherChannel.</li>
+              <li>Mengonfigurasi keamanan jaringan lokal dan perimeter, termasuk Switch Security, NAT, Access Control Lists (ACL), dan Wireless LAN Controller (WLC).</li>
+              <li>Melakukan troubleshooting konektivitas jaringan serta mempelajari dasar-dasar otomatisasi jaringan (network automation) dan virtualisasi.</li>
+            </ul>
+            <div class="card-tags">
+              <span class="tech-tag">CCNAv7</span>
+              <span class="tech-tag">Routing & Switching</span>
+              <span class="tech-tag">OSPFv2</span>
+              <span class="tech-tag">VLAN</span>
+              <span class="tech-tag">Network Security</span>
+              <span class="tech-tag">Network Automation</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="cv-footer">
+        <div data-lang="en">&copy; 2026 Bayu Riesta • Pontianak, West Kalimantan, Indonesia</div>
+        <div data-lang="id">&copy; 2026 Bayu Riesta • Pontianak, Kalimantan Barat, Indonesia</div>
+        <div>
+          <a href="mailto:byriesta@gmail.com">
+            <span data-lang="en">Contact Directly</span>
+            <span data-lang="id">Hubungi Langsung</span>
+          </a>
+        </div>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toastNotice" class="toast-notice" role="status" aria-live="polite">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 6L9 17l-5-5"></path>
+    </svg>
+    <span class="toast-text">Copied to clipboard</span>
+  </div>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

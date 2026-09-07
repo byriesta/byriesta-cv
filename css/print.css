@@ -1,0 +1,283 @@
+/* ==========================================================================
+   Blazing-Fast CV - Print & PDF Export Stylesheet
+   Optimized for 1-2 Page A4 / Letter PDF Resumes via Browser Print (Ctrl+P)
+   ========================================================================== */
+
+@media print {
+  /* Setup page geometry & paper boundaries */
+  @page {
+    margin: 12mm 14mm 12mm 14mm;
+    size: auto;
+  }
+
+  /* Reset document for clean paper print */
+  *, *::before, *::after {
+    background: transparent !important;
+    color: #111827 !important; /* Rich crisp black for ink/PDF */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    font-size: 11pt !important;
+    line-height: 1.45 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  .page-wrapper {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .cv-sheet {
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  /* Hide web-only controls and interactive elements */
+  .cv-toolbar,
+  .toast-notice,
+  .project-links,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Enforce active language in print - ONLY print what language is showed */
+  html[data-lang="en"] [data-lang="id"],
+  html[data-lang="en"] [lang="id"] {
+    display: none !important;
+  }
+
+  html[data-lang="id"] [data-lang="en"],
+  html[data-lang="id"] [lang="en"] {
+    display: none !important;
+  }
+
+  /* Compact layout for print */
+  .header-hero {
+    padding-bottom: 12pt !important;
+    margin-bottom: 8pt !important;
+    border-bottom: 1.5pt solid #d1d5db !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+
+  .hero-name {
+    font-size: 20pt !important;
+    margin-bottom: 2pt !important;
+    color: #111827 !important;
+  }
+
+  .hero-title {
+    font-size: 11.5pt !important;
+    font-weight: 700 !important;
+    color: #2563eb !important; /* Subtle professional accent in color print */
+    margin-bottom: 4pt !important;
+  }
+
+  .hero-location {
+    font-size: 9.5pt !important;
+    margin-bottom: 6pt !important;
+    color: #4b5563 !important;
+  }
+
+  .contact-links {
+    gap: 4pt 8pt !important;
+  }
+
+  .contact-pill {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: 9pt !important;
+    color: #374151 !important;
+  }
+
+  .contact-pill svg {
+    display: none !important; /* Save space on printed page */
+  }
+
+  /* Hide WhatsApp from printed / PDF resume */
+  .contact-pill[href*="wa.link"],
+  .contact-pill[href*="whatsapp"] {
+    display: none !important;
+  }
+
+  /* Avatar in print - small and crisp */
+  .hero-avatar {
+    width: 65px !important;
+    height: 65px !important;
+    border: 1pt solid #cbd5e1 !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+  }
+
+  .hero-avatar img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center 15% !important;
+  }
+
+  /* Section Headings */
+  .cv-section {
+    padding-top: 10pt !important;
+    padding-bottom: 2pt !important;
+  }
+
+  .section-heading {
+    font-size: 10pt !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.05em !important;
+    margin-bottom: 6pt !important;
+    color: #1f2937 !important;
+    border-bottom: 1pt solid #e5e7eb !important;
+    padding-bottom: 2pt !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  .section-heading::after {
+    display: none !important;
+  }
+
+  .section-heading svg {
+    display: none !important;
+  }
+
+  .summary-text {
+    font-size: 9.5pt !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Prevent page cuts right in the middle of a section, card, or list */
+  .cv-section,
+  .experience-card,
+  .project-card,
+  .education-item,
+  .skill-category,
+  .skills-container,
+  .bullet-list li {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .card-header,
+  .education-item-header,
+  .project-title-row {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  .experience-list {
+    gap: 9pt !important;
+  }
+
+  .role-title {
+    font-size: 10pt !important;
+  }
+
+  .company-meta {
+    font-size: 9.5pt !important;
+    color: #1f2937 !important;
+  }
+
+  .date-badge {
+    font-size: 8.5pt !important;
+    color: #6b7280 !important;
+  }
+
+  .bullet-list li {
+    font-size: 9pt !important;
+    line-height: 1.45 !important;
+    padding-left: 10pt !important;
+  }
+
+  .bullet-list li::before {
+    font-size: 8pt !important;
+  }
+
+  /* Tech tags */
+  .card-tags {
+    margin-top: 2pt !important;
+    gap: 3pt !important;
+  }
+
+  .tech-tag {
+    background: transparent !important;
+    border: 0.5pt solid #cbd5e1 !important;
+    font-size: 7.5pt !important;
+    padding: 0 4pt !important;
+    color: #4b5563 !important;
+  }
+
+  /* Projects grid */
+  .projects-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 6pt !important;
+  }
+
+  .project-card {
+    background: transparent !important;
+    border: 0.75pt solid #e5e7eb !important;
+    padding: 6pt 8pt !important;
+  }
+
+  .project-title {
+    font-size: 9.5pt !important;
+  }
+
+  .project-desc {
+    font-size: 8.5pt !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Skills */
+  .skill-category {
+    grid-template-columns: 100pt 1fr !important;
+    gap: 4pt !important;
+  }
+
+  .category-name {
+    font-size: 9pt !important;
+    font-weight: 700 !important;
+  }
+
+  .skill-pill {
+    background: transparent !important;
+    border: 0.5pt solid #cbd5e1 !important;
+    font-size: 8pt !important;
+    padding: 1pt 4pt !important;
+  }
+
+  /* Education */
+  .education-list {
+    gap: 6pt !important;
+  }
+
+  .degree-title {
+    font-size: 9.5pt !important;
+  }
+
+  .school-name {
+    font-size: 9pt !important;
+  }
+
+  .edu-details {
+    font-size: 8.5pt !important;
+  }
+
+  /* Footer */
+  .cv-footer {
+    display: none !important;
+  }
+}
+
