@@ -109,6 +109,24 @@
     display: none !important;
   }
 
+  /* Print phone pill: visible in print with phone icon */
+  .print-phone-pill {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 3pt !important;
+    font-size: 9pt !important;
+    color: #374151 !important;
+  }
+
+  .print-phone-pill svg,
+  .print-phone-pill .phone-print-icon {
+    display: inline-block !important;
+    width: 9.5pt !important;
+    height: 9.5pt !important;
+    vertical-align: -1pt !important;
+    fill: currentColor !important;
+  }
+
   /* Avatar in print - small and crisp */
   .hero-avatar {
     width: 65px !important;

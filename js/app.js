@@ -99,12 +99,73 @@
     langToggleBtn.addEventListener('click', toggleLang);
   }
 
-  // --- Print / PDF Trigger ---
-  if (printCvBtn) {
-    printCvBtn.addEventListener('click', () => {
-      window.print();
-    });
+  // --- Print / PDF with On-Demand Safe Phone Number ---
+  const PHONE_STORAGE_KEY = 'cv-print-phone';
+
+  function setupPrintPhone(phoneNumber) {
+    let pill = document.getElementById('printPhonePill');
+    if (phoneNumber && phoneNumber.trim()) {
+      if (!pill) {
+        pill = document.createElement('span');
+        pill.id = 'printPhonePill';
+        pill.className = 'contact-pill print-phone-pill';
+        const contactLinks = document.querySelector('.contact-links');
+        if (contactLinks) {
+          const emailLink = contactLinks.querySelector('a[href^="mailto:"]');
+          if (emailLink && emailLink.nextSibling) {
+            contactLinks.insertBefore(pill, emailLink.nextSibling);
+          } else {
+            contactLinks.appendChild(pill);
+          }
+        }
+      }
+      pill.innerHTML = `
+        <svg viewBox="0 0 24 24" class="phone-print-icon">
+          <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+        </svg>
+        <span class="phone-number-text"></span>
+      `;
+      const numSpan = pill.querySelector('.phone-number-text');
+      if (numSpan) numSpan.textContent = phoneNumber.trim();
+    } else if (pill) {
+      pill.remove();
+    }
   }
+
+  function handlePrint() {
+    const isId = (document.documentElement.getAttribute('data-lang') || 'en') === 'id';
+    const savedPhone = localStorage.getItem(PHONE_STORAGE_KEY) || '';
+    const promptMessage = isId
+      ? 'Masukkan nomor telepon / WhatsApp untuk dicantumkan di PDF resume (kosongkan jika tidak ingin mencantumkan):'
+      : 'Enter phone / WhatsApp number to include on PDF resume (leave blank to omit):';
+
+    const input = prompt(promptMessage, savedPhone);
+    if (input === null) {
+      return; // User cancelled
+    }
+
+    const trimmed = input.trim();
+    if (trimmed) {
+      localStorage.setItem(PHONE_STORAGE_KEY, trimmed);
+    } else {
+      localStorage.removeItem(PHONE_STORAGE_KEY);
+    }
+
+    setupPrintPhone(trimmed);
+    window.print();
+  }
+
+  if (printCvBtn) {
+    printCvBtn.addEventListener('click', handlePrint);
+  }
+
+  // Also support direct Ctrl+P / Cmd+P shortcut
+  window.addEventListener('beforeprint', () => {
+    const savedPhone = localStorage.getItem(PHONE_STORAGE_KEY);
+    if (savedPhone) {
+      setupPrintPhone(savedPhone);
+    }
+  });
 
   // --- Copy Email with Toast ---
   let toastTimer = null;

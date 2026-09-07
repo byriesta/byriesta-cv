@@ -321,6 +321,11 @@ body {
   fill: currentColor;
 }
 
+/* Print-only phone badge (hidden on screen) */
+.print-phone-pill {
+  display: none !important;
+}
+
 /* Profile Photo / Avatar */
 .hero-avatar {
   flex-shrink: 0;
